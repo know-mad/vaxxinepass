@@ -24,7 +24,11 @@ const userSchema = new mongoose.Schema({
         select: false
     },
     resetPasswordToken: String,
-    resetPasswordExpire: Date
+    resetPasswordExpire: Date,
+    address: {
+        type: String,
+        required: true
+    }
 })
 
 userSchema.pre('save', async function(next) {
