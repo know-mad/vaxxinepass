@@ -1,5 +1,5 @@
 ## Objective
-The objective of this project is to build a REST api as the back end part of the full stack vaxxine passport application built on the MERN (MongoDB, Express.js, React.js, Node.js) stack. Built on Node.js, this api features full Create, Read, Update, and Delete functionality when creating users as well as authentication for 
+The objective of this project is to build a REST api as the back end part of the full stack vaxxine passport application built on the MERN (MongoDB, Express.js, React.js, Node.js) stack. Built on Node.js, this api features full Create, Read, Update, and Delete functionality when creating users for the app, as well as authentication for 
 users to sign in once they have created an account.
 
 ## Technologies Used
@@ -26,7 +26,11 @@ users to sign in once they have created an account.
 5. bcrypt
 ```npm install bcrypt```
 
-## Route
+### Route
+POST register a user
+```https://vaxxinepass.herokuapp.com/api/auth/register```
+
+### Route
 GET all users
 ```https://vaxxinepass.herokuapp.com/api/users```
 
@@ -39,3 +43,5 @@ GET all users
     "__v": 0
   }
 ```
+
+
