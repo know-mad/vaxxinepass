@@ -26,10 +26,11 @@ users to sign in once they have created an account.
 5. bcrypt
 ```npm install bcrypt```
 
-## Routes
+## Route
+GET all users
 ```https://vaxxinepass.herokuapp.com/api/users```
 
-# Expected Result 
+### Expected Result 
 ```
 {
     "_id": "603fa3d791900b59c8ed988c",
