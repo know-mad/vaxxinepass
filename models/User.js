@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: [true, 'Please provide apassword'],
+        required: [true, 'Please provide a password'],
         minlength: 6,
         select: false
     },
@@ -27,8 +27,24 @@ const userSchema = new mongoose.Schema({
     resetPasswordExpire: Date,
     address: {
         type: String,
-        required: true
-    }
+        required: [true, 'Please provide your home address']
+    },
+    apartment: {
+        type: String,
+        required: false
+    },
+    zipCode: {
+        type: String,
+        required: [true, 'Please provide your zip code'],
+        minLength: 5,
+        maxLength: 5
+    },
+    tel: {
+        type: String,
+        required: [true, 'Enter a full 10 digit telephone number'],
+        minLength: 10,
+        maxLength: 10
+    },
 })
 
 userSchema.pre('save', async function(next) {

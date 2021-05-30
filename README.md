@@ -1,4 +1,4 @@
-## Objective
+# Vaxxine Pass App API
 The objective of this project is to build a REST api as the back end part of the full stack vaxxine passport application built on the MERN (MongoDB, Express.js, React.js, Node.js) stack. Built on Node.js, this api features full Create, Read, Update, and Delete functionality when creating users for the app, as well as authentication for 
 users to sign in once they have created an account.
 
@@ -26,20 +26,42 @@ users to sign in once they have created an account.
 5. bcrypt
 ```npm install bcrypt```
 
-### Route
+## Endpoints
 POST register a user
 ```https://vaxxinepass.herokuapp.com/api/auth/register```
 
-### Route
+POST login a user
+```https://vaxxinepass.herokuapp.com/api/auth/login```
+
+POST forgot password
+```https://vaxxinepass.herokuapp.com/api/auth/forgotpassword```
+
+PUT reset password
+```https://vaxxinepass.herokuapp.com/api/auth/resetpassword/:resetToken```
+
 GET all users
 ```https://vaxxinepass.herokuapp.com/api/users```
 
 ### Expected Result 
 ```
 {
-    "_id": "603fa3d791900b59c8ed988c",
-    "username": "Test User",
-    "email": "Test@gmail.com",
+    "_id": "60b3ba1f3f46acfc6cccc4d7",
+    "username": "testuser",
+    "email": "test2@email.com",
+    "address": "555 E 21st Ave.",
+    "apartment": "202",
+    "zipCode": "21122",
+    "tel": "2125555555",
+    "__v": 0
+  },
+  {
+    "_id": "60b3bb1c3f46acfc6cccc4d8",
+    "username": "testuser2",
+    "email": "test3@email.com",
+    "address": "555 E 23rd Ave.",
+    "apartment": "157",
+    "zipCode": "21122",
+    "tel": "2127777777",
     "__v": 0
   }
 ```

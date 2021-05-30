@@ -4,13 +4,25 @@ const ErrorResponse = require('../utils/errorResponse')
 const sendEmail = require('../utils/sendEmail')
 
 exports.register =  async (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { 
+      username, 
+      email, 
+      password, 
+      address, 
+      apartment,
+      zipCode,
+      tel
+    } = req.body;
 
   try {
     const user = await User.create({
         username, 
         email,
-        password
+        password,
+        address,
+        apartment,
+        zipCode,
+        tel
     })
 
     sendToken(user, 200, res)
@@ -57,7 +69,7 @@ exports.forgotpassword = async(req, res, next) => {
         const resetToken = user.getResetPasswordToken()
         await user.save()
 
-        const resetUrl = `http://localhost:3000/passwordreset${resetToken}`
+        const resetUrl = `http://vaxxinepass.herokuapp.com/passwordreset${resetToken}`
         const message = `
             <h1>You have requested a password reset</h1>
             <p>Please go to this link to reset your password</p>
